@@ -1,13 +1,15 @@
-int	**ft_search_biggest(char **map, int row, int col)
+#include "../include/f.h"
+
+void	**ft_search_biggest(char **map, int row, int col)
 {
 	int dp[row][col];
-	int max_size;
 	int i;
 	int j;
 
 	i = 0;
 	j = 0;
-	max_size = 0;
+
+	max_sqr max;
 	while (i < row)
 	{
 		while (j < col)
@@ -22,8 +24,17 @@ int	**ft_search_biggest(char **map, int row, int col)
 				{
 					dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1;
 				}
+				if(dp[i][j] > max[0].size)
+				{
+					max[0].size = dp[i][j];
+					max[0].i = i;-
+					max[0].j = j;
+				}
 			}
-			max_size = max(max_size, dp[i][j]);
+			else
+			{
+				dp[i][j] = 0;
+			}
 			j++;
 		}
 		i++;
