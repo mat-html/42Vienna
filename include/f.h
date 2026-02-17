@@ -6,11 +6,11 @@
 /*   By: jomatic <jomatic@student.42vienna.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 15:05:28 by jomatic           #+#    #+#             */
-/*   Updated: 2026/02/17 15:06:31 by jomatic          ###   ########.fr       */
+/*   Updated: 2026/02/17 15:38:59 by sxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typdef max_square {
+typdef struct {
 	int size;
 	int i;
 	int j;
