@@ -6,13 +6,13 @@
 /*   By: jomatic <jomatic@student.42vienna.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 16:01:47 by jomatic           #+#    #+#             */
-/*   Updated: 2026/02/16 17:51:52 by jomatic          ###   ########.fr       */
+/*   Updated: 2026/02/17 16:09:52 by jomatic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/f.h"
 
-int	main(int acc, char **av)
+int	main(int ac, char **av)
 {
 	if (ac == 1)
 		return 1;
