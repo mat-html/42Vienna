@@ -1,13 +1,13 @@
 NAME        = bsq
 
-CC          = cc
+CC          = gcc
 CFLAGS      = -Wall -Wextra -Werror -g
 
 SRC_DIR     = src
 OBJ_DIR     = obj
 
-SRC_FILES   = main.c error_handling.c ft_putchar.c ft_putstr.c \
-              generate_map.c open_file.c ft_strl.c
+SRC_FILES   = main.c error_handling.c ft_search_biggest.c \
+			  generate_map.c open_file.c utils.c
 
 SRCS        = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJS        = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
