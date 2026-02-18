@@ -67,18 +67,17 @@ int	get_header_len(char *buf)
 
 char	*extract_header(char *buf, t_map *m)
 {
-	int header_len;
-	int cols;
-	char *p;
+	int	cols;
+	char	*p;
+	int	header_len;
 
-	header_len = get_header_len(buf);
-	if (header_len < 0)
+	if ((header_len = get_header_len(buf)) < 0)
 		return (NULL);
 	m->empty = buf[header_len - 3];
 	m->obstacle = buf[header_len - 2];
 	m->full = buf[header_len - 1];
-	if (m->empty == m->obstacle || m->empty == m->full ||
-		m->obstacle == m->full)
+	if (m->empty == m->obstacle || m->empty == m->full
+		|| m->obstacle == m->full)
 		return (NULL);
 	m->rows = number_from_header(buf, header_len - 3);
 	if (m->rows <= 0)
@@ -92,6 +91,7 @@ char	*extract_header(char *buf, t_map *m)
 	m->cols = cols;
 	return (p);
 }
+
 
 int	fill_grid_lines(t_map *m, char *p)
 {

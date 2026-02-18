@@ -70,33 +70,28 @@ void	solve_and_print(t_map *m)
 
 int	find_max_square(t_map *m, t_sqr *max)
 {
-	int *prev;
-	int *curr;
-	int i;
+	int	*prev;
+	int	*curr;
+	int	i;
 
 	if (!alloc_arrays(&prev, &curr, m->cols))
 		return (0);
-	for (i = 0; i < m->cols; i++)
-		prev[i] = 0;
+	i = 0;
+	while (i < m->cols)
+		prev[i++] = 0;
 	i = 0;
 	while (i < m->rows)
 	{
-		t_dp_state state;
-		state.prev = prev;
-		state.curr = curr;
-		state.max = max;
+		t_dp_state state = {prev, curr, max};
 		process_row(m, i, &state);
-		{
-			int *tmp = prev;
-			prev = curr;
-			curr = tmp;
-		}
+		int *tmp = prev; prev = curr; curr = tmp;
 		i++;
 	}
 	free(prev);
 	free(curr);
 	return (1);
 }
+
 
 int	alloc_arrays(int **prev, int **curr, int cols)
 {
